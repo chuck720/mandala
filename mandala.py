@@ -8,17 +8,20 @@ class circle:
         self.yc = yc
         self.r = r
  
+    # defining where to draw the circle by its center rather than a rectangle
     def draw_circle(self):
         test_canvas.create_oval(self.xc - self.r, self.yc + self.r, self.xc + self.r, self.yc - self.r)
 
 root = Tk()
 
+#setting variables
 r = 100
 canvas_width = 2000
 canvas_height = 2000
 test_canvas = Canvas(root, width = canvas_width, height = canvas_height, bg = "white")
 test_canvas.pack()
 
+# using nested loops to create the full pattern from an initial one
 for k in range(0, int(canvas_width / (2 * r))):
     for j in range(0, int(canvas_width / (2 * r))):
         for i in range(1, int(canvas_width / r)):
